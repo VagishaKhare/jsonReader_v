@@ -7,10 +7,14 @@
       <th>Name</th>
       <th>Weight</th>
       <th>Availability</th>
+      <th>Is Editable?</th>
     </tr>
     <tr *ngFor="let product of arrProducts">
-          <td>{{product}}</td>
-          <td>{{product}}</td>
-          <td>{{product}}</td>
+      <td>{{product.name}}</td>
+      <td>{{product.weight}}</td>
+      <td>{{product.availability}}</td>
+      <td><button routerLink="/edit-form" [disabled]="!product.isEditable"
+        (click)="btnClick();">
+        Edit</button></td>
   </table>
 </div>
