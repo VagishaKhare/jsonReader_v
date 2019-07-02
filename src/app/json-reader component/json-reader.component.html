@@ -1,0 +1,28 @@
+<html>
+<body style="background-color:powderblue;">
+<div style="text-align:center;">
+  <h1>
+    {{ title }}
+  </h1>
+  <input placeholder="Search By Name" [(ngModel)]="searchModel">
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th mat-sort-header="price">Price(Rs)</th>
+      <th>Review count</th>
+      <th></th>
+      <th>Action</th>
+    </tr>
+    <tr *ngFor="let product of arrProducts|listFilter:searchModel">
+      <td>{{product.name}}</td>
+      <td>{{product.content}}</td>
+      <td>{{product.price}}</td>
+      <td>{{product.review}}</td>
+      <td><img src="{{product.imageUrl}}" height="50" width="50"
+        placeholder='src\assets\images\placeholder.jpg'></td>
+        <td><button style="width: 80%; height: 20%;">Add</button></td>
+  </table>
+</div>
+</body>
+</html>
